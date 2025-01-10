@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation"; // Use useParams from next/navigation
 import DOMPurify from "dompurify";
+import { DevToArticle } from "@/types/DevToArticle";
 
 async function fetchBlogById(id: string) {
   const res = await fetch(`https://dev.to/api/articles/${id}`);
@@ -14,7 +15,7 @@ async function fetchBlogById(id: string) {
 
 export default function BlogDetailPage() {
   const { id } = useParams(); // Extract the dynamic route parameter
-  const [blog, setBlog] = useState<any>(null);
+  const [blog, setBlog] = useState<DevToArticle>();
 
   useEffect(() => {
     if (id) {
