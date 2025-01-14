@@ -2,7 +2,7 @@
 import { DevToArticle } from "@/types/DevToArticle";
 
 export async function fetchDevToBlogs(): Promise<DevToArticle[]> {
-  const response = await fetch("https://dev.to/api/articles?username=himanshusinghtomar");
+  const response = await fetch("https://dev.to/api/articles?username=himanshusinghtomar&page=1&per_page=100");
 
   if (!response.ok) {
     throw new Error("Failed to fetch blogs from Dev.to API");

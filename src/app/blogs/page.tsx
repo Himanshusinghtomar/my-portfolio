@@ -3,7 +3,7 @@ import { DevToArticle } from "@/types/DevToArticle";
 import Link from "next/link";
 async function fetchDevToBlogs() {
   const res = await fetch(
-    "https://dev.to/api/articles?username=himanshusinghtomar",
+    "https://dev.to/api/articles?username=himanshusinghtomar&page=1&per_page=100",
     {
       cache: "no-store", // Ensure fresh data for every request
     }
